@@ -14,7 +14,6 @@ public class SaleEntity {
     private Integer deals;
     private Double amount;
     private LocalDate date;
-
     @ManyToOne
     @JoinColumn(name = "seller_id")
     private SellerEntity seller;
