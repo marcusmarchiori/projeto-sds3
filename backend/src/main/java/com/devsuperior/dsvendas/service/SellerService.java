@@ -1,6 +1,6 @@
 package com.devsuperior.dsvendas.service;
 
-import com.devsuperior.dsvendas.dto.SellerDTO;
+import com.devsuperior.dsvendas.controller.response.SellerResponse;
 import com.devsuperior.dsvendas.entity.SellerEntity;
 import com.devsuperior.dsvendas.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +15,12 @@ public class SellerService {
     @Autowired
     private SellerRepository sellerRepository;
 
-    public List<SellerDTO> findAll(){
+    public List<SellerResponse> findAll(){
         List<SellerEntity> result = sellerRepository.findAll();
-        return result.stream().map(x -> new SellerDTO(x)).collect(Collectors.toList());
-        // map vai converter a coleção original para SellerDTO, para cada x da lista original cria-se um novo objeto SellerDTO
-        // collect stream pra lista novamente
+        return result.stream().map(x -> new SellerResponse(x)).collect(Collectors.toList());
+        // map vai converter a coleção original para SellerResponse,
+        // para cada x da lista original cria-se um novo objeto SellerResponse
+        // collect converte stream pra lista novamente
     }
 
 }

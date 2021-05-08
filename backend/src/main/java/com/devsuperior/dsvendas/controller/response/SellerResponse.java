@@ -1,24 +1,24 @@
-package com.devsuperior.dsvendas.dto;
+package com.devsuperior.dsvendas.controller.response;
 
 import com.devsuperior.dsvendas.entity.SellerEntity;
 
 import java.io.Serializable;
 
-public class SellerDTO implements Serializable { // Serializable é para os objetos sejam convertidos para bytes
+public class SellerResponse implements Serializable { // Serializable é para os objetos sejam convertidos para bytes
 
     private Long id;
     private String name;
 
-    public SellerDTO(){
+    public SellerResponse(){
 
     }
 
-    public SellerDTO(Long id, String name) {
+    public SellerResponse(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public SellerDTO(SellerEntity sellerEntity) {
+    public SellerResponse(SellerEntity sellerEntity) {
         id = sellerEntity.getId();
         name = sellerEntity.getName();
     }
